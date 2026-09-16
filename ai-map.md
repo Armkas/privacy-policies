@@ -1,155 +1,86 @@
 # Privacy Policy
 
-**Last Updated:** September 3, 2026
+**Last Updated:** September 16, 2026
 
-Thank you for using our application ("AI-map"). This Privacy Policy explains how we collect, use, and protect your information when you use our services.
+Thank you for using AI Map: Voice GPS Navigation ("AI-MAP", "the App"). This Privacy Policy explains what information the App collects, how it is collected, how it is used, and who it is shared with.
 
-By using the App, you acknowledge and agree to the practices described in this Privacy Policy.
+## 1. Summary
 
-## 1. Information We Collect and How We Use It
+* The App works as a normal map without AI. Maps, manual search and navigation do not require sharing data with any AI service.
+* AI voice and chat features are powered by third-party AI services: **DeepSeek** and **Google (Gemini API)**.
+* **Before any data is sent to a third-party AI service, the App shows a consent screen** explaining what data is sent, who receives it and why. Nothing is sent unless you tap **Agree**.
+* You can withdraw consent at any time in **Settings → Privacy → Share data with AI services**. After you withdraw, the App stops sending data to third-party AI services.
+* The App does not require an account, and we do not collect your name, email address, phone number or password.
 
-AI-map is designed to provide AI-powered navigation, map control, and related features while minimizing the amount of personal information we collect.
+## 2. Information We Collect, How We Collect It and How We Use It
 
-The App does not require you to create an account or provide your name, email address, phone number, or password in order to use the App.
+### A. Location Data
 
-### A. Location Data (GPS)
+* **How it is collected:** From your device's location services, only after you grant location permission in the iOS system prompt.
+* **How it is used on your device:** To show your position on the map, search nearby places and provide turn-by-turn navigation using Apple MapKit.
+* **Shared with AI services (only with your AI consent):** When you ask an AI question that depends on where you are (for example "coffee nearby" or "weather today"), a text description of your approximate location (such as a place, street or area name) and today's date are sent to Google (Gemini API). While navigating, route details (origin and destination names, waypoints, remaining distance and time) are sent to DeepSeek so that the AI can understand navigation commands. We do not send your continuous location history.
 
-* **What we collect:** The App may request access to your device's precise location data.
-* **How we use it:** Location data is used to provide map rendering, navigation, location-based features, and location-related AI responses.
-* **Third-Party Integration:** The App uses Apple's MapKit and related Apple mapping services. Location data processed by Apple's services is subject to Apple's Privacy Policy.
+### B. Voice Data (Microphone and Speech Recognition)
 
-For more information, please refer to [Apple's Privacy Policy](https://www.apple.com/legal/privacy/).
+* **How it is collected:** Only while you actively use voice features (Push-to-Talk or Continuous mode), after you grant microphone and speech recognition permission in the iOS system prompts.
+* **Standard voice:** Speech is transcribed by Apple's Speech framework. Audio processed by Apple is subject to [Apple's Privacy Policy](https://www.apple.com/legal/privacy/).
+* **Premium Voice (optional, only with your AI consent):** If you turn on Premium Voice, your voice recording is sent to Google (Gemini API) for transcription.
+* The App does not record in the background without an active voice interaction.
 
-### B. Voice and Audio Data (Microphone)
+### C. Text of Your Requests
 
-* **What we collect:** The App may request microphone access to enable voice commands. Audio is captured only when you explicitly interact with the voice features, such as "Push-to-Talk" or an active "Free-Chat" session.
-* **How we use it:** Voice input is used to transcribe your commands into text so that the App can execute map commands and interact with the AI.
-* **Background Recording:** The App does not secretly record or continuously use the microphone in the background without your knowledge or an active voice interaction.
+* **How it is collected:** From text you type in the AI chat, or text transcribed from your voice.
+* **Shared with AI services (only with your AI consent):** The text of your request (limited in length) is sent to DeepSeek to understand it and convert it into map commands. Questions that need real-time or encyclopedic information are sent to Google (Gemini API), which may use Google Search to answer.
 
-### C. Text Input
+### D. Anonymous Identifier, AI Credits and Purchases
 
-* **What we collect:** The App processes text that you voluntarily enter into the chat interface.
-* **How we use it:** Text input is used to execute map commands, answer questions, and generate AI responses.
+* **How it is collected:** The App generates a random anonymous identifier. It is stored in your device Keychain and in your iCloud Key-Value storage so that your AI Credits can be restored on your other devices using the same Apple Account.
+* **How it is used:** Our backend (hosted on Supabase) uses this identifier to store your AI Credits balance, verify App Store purchases (transaction identifiers and amounts) and prevent abuse. It is sent to our backend with AI requests for billing, but it is **never forwarded** to DeepSeek or Google. It is not linked to your name, email or Apple Account credentials.
+* **Payments:** All purchases are processed by Apple. We never receive your card number, bank information or Apple Account password.
 
-## 2. AI Service Providers
+## 3. Who We Share Data With
 
-To provide AI-powered features, the App uses third-party Large Language Model (LLM) service providers through APIs.
+| Recipient | Data | Purpose |
+|---|---|---|
+| **DeepSeek** (DeepSeek API) | Text of your requests; navigation details | Understanding requests and generating map commands |
+| **Google** (Gemini API) | Real-time questions with approximate location and date; Premium Voice audio | Answering real-time questions; voice transcription |
+| **Supabase** (our backend hosting provider) | Anonymous identifier, AI Credits balance, purchase records; AI requests pass through it in transit | Billing, purchase verification and relaying requests to the AI providers above |
+| **Apple** (MapKit, Speech, App Store, iCloud) | Location for maps, standard voice transcription, purchases, anonymous identifier sync | Maps, speech recognition, payments, credit restoration |
 
-* **Data Shared:** The text of your commands or queries, including text transcribed from your voice input, may be sent to third-party AI providers for processing.
-* **Personal Information:** We do not intentionally attach your name, email address, Apple Account credentials, payment information, or other directly identifying personal information to requests sent to AI providers.
-* **Location Information:** We do not intentionally send your precise GPS coordinates to third-party AI providers unless such information is explicitly included in your prompt or is necessary to fulfill a requested feature.
-* **Purpose:** Data is transmitted solely to process your request and provide the requested AI functionality.
-* **Training:** Where technically and contractually applicable, we use AI service providers that do not use API customer data to train their public AI models.
+Data is sent to third-party AI services **only after you give consent in the App**, and only to provide the feature you are using. We do not sell your data and do not use it for advertising.
 
-Third-party providers may process or temporarily retain data according to their own terms and privacy policies.
+We only use service providers whose terms provide the same or equal protection of your data as described in this Privacy Policy, and which, under their API terms, do not use API data to train their public models where such an option is offered. Each provider processes data according to its own privacy policy:
 
-## 3. In-App Purchases and AI Credits
+* DeepSeek: https://platform.deepseek.com/downloads/DeepSeek%20Open%20Platform%20Privacy%20Policy.html
+* Google Gemini API: https://ai.google.dev/gemini-api/terms
+* Supabase: https://supabase.com/privacy
+* Apple: https://www.apple.com/legal/privacy/
 
-The App may offer consumable in-app purchases, such as AI Credits, that can be used to access AI-powered features.
+## 4. Data Retention
 
-### A. Payment Processing
+* We do not store your voice recordings, chat history or location history on our servers. AI requests are relayed to the providers above and are not saved by our backend.
+* Third-party AI providers may retain request data temporarily according to their own policies (for example, for abuse monitoring).
+* Your anonymous identifier, AI Credits balance and purchase records are kept on our backend for as long as needed to provide credits and meet legal or accounting obligations.
+* Settings and preferences are stored locally on your device.
 
-All in-app purchases are processed by Apple through the App Store and Apple's StoreKit framework.
+## 5. Your Choices
 
-We do not receive or store your credit card number, bank account information, Apple Account password, or other payment credentials.
-
-### B. AI Credits
-
-The App maintains your AI Credits balance as part of the App's local data.
-
-AI Credits are **stored locally on your device** and are not stored in an AI-map user account or on our servers.
-
-Because the App does not currently provide account-based or cloud-based Credits synchronization:
-
-> **If you delete the App, replace your device, lose your device, or otherwise lose the App's locally stored data, your remaining AI Credits may not be recoverable.**
-
-Purchasing Credits does not create an AI-map account, and the App does not require you to register for an account.
-
-### C. Apple Purchase Records
-
-Apple maintains records of App Store transactions associated with the Apple Account used to make the purchase.
-
-However, Apple StoreKit purchase records should not be considered the same as your current AI Credits balance. Consumable Credits are managed by the App as local application state.
-
-For more information about Apple's handling of App Store purchases, please refer to [Apple's Privacy Policy](https://www.apple.com/legal/privacy/).
-
-## 4. Data Retention and Storage
-
-We follow a data-minimization approach.
-
-We do not intentionally maintain a permanent server-side history of your personal use of the App.
-
-### Information We Do Not Permanently Store on Our Servers
-
-We do not intentionally store on our servers:
-
-* Your location history;
-* Your voice recordings;
-* Your complete chat history;
-* Your Apple Account password;
-* Your payment card information;
-* Your AI Credits balance as an account-associated server-side balance.
-
-Voice data may be processed transiently for transcription.
-
-Text commands may be processed in real time by the App and applicable third-party AI service providers.
-
-### Local App Data
-
-Certain App data, including settings, preferences, and AI Credits, may be stored locally on your device.
-
-Local data is subject to the operating system's storage, backup, deletion, and security mechanisms.
-
-## 5. Third-Party Services
-
-The App may use third-party services necessary to provide its functionality, including:
-
-* **Apple MapKit and Apple Maps services** for maps and location-related features;
-* **Apple App Store and StoreKit** for in-app purchases;
-* **Third-party AI / LLM providers** for AI processing.
-
-Each third-party service may process information in accordance with its own terms and privacy policy.
-
-We encourage you to review the privacy policies of these third-party providers.
+* **AI data sharing:** Tap **Not Now** on the consent screen, or turn off **Settings → Privacy → Share data with AI services** at any time. The map, manual search and navigation keep working.
+* **Permissions:** Location, microphone and speech recognition can be changed at any time in iOS Settings.
+* **Deletion requests:** Contact us at the email below to request deletion of data associated with your anonymous identifier.
 
 ## 6. Children's Privacy
 
-Our App does not knowingly collect personally identifiable information from children under the age of 13, or the equivalent minimum age in your jurisdiction.
-
-If you become aware that a child has provided us with personal information in violation of applicable law, please contact us so that we can take appropriate action.
+The App does not knowingly collect personal information from children under 13 (or the minimum age in your jurisdiction). If you believe a child has provided us with personal information, please contact us.
 
 ## 7. Data Security
 
-We take reasonable technical measures to protect information processed by the App.
+Data is transmitted over encrypted connections (HTTPS/WSS). API keys for AI providers are kept on our backend and never shipped in the App. No method of transmission or storage is completely secure, but we take reasonable measures to protect your information.
 
-However, no method of electronic transmission, storage, or processing can be guaranteed to be completely secure.
+## 8. Changes to This Privacy Policy
 
-Information stored locally on your device is protected by the security mechanisms provided by your operating system and device.
+We may update this Privacy Policy from time to time. We will update the "Last Updated" date above, and for material changes we may notify you in the App.
 
-Information transmitted to third-party services is subject to the security and privacy practices of those services.
-
-## 8. Your Choices
-
-You may control the permissions granted to the App through your device's system settings.
-
-Depending on the features you use, you may:
-
-* Disable location access;
-* Disable microphone access;
-* Manage your App Store purchases through your Apple Account and Apple's App Store settings.
-
-Disabling certain permissions may prevent some App features from functioning correctly.
-
-## 9. Changes to This Privacy Policy
-
-We may update this Privacy Policy from time to time to reflect changes to the App, our services, applicable laws, or our data practices.
-
-When we make changes, we will update the **"Last Updated"** date at the top of this Privacy Policy.
-
-For material changes, we may provide additional notice through the App or other appropriate means.
-
-## 10. Contact Us
-
-If you have any questions or suggestions about this Privacy Policy, please contact us at:
+## 9. Contact Us
 
 **Email:** [puyue2023@gmail.com](mailto:puyue2023@gmail.com)

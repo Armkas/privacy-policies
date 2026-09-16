@@ -1,35 +1,95 @@
-# AI Shift - App Support
+# Privacy Policy & Terms of Service for AI Shift
 
-Welcome to the official support page for **AI Shift**, the ultimate offline scheduling assistant designed to make team management effortless, fast, and completely private.
+**Last Updated: September 16, 2026**
 
-We are committed to providing you with the best scheduling experience. If you encounter any issues, have questions, or want to share feedback, we are here to help!
+AI Shift (AIシフト / 排班神器 / Ca Làm Việc) is developed as a privacy-first, on-device intelligent scheduling application. We firmly believe that your shift schedules, employee records, voice inputs, and business information belong entirely to you.
 
-## 📬 Contact Us
-For any technical issues, model download inquiries, or general feedback, please reach out to us via email. Our team will get back to you as soon as possible.
+This document outlines our data protection commitments, technical privacy architecture, and terms governing the use of the App, in strict compliance with the Apple App Store Review Guidelines.
 
-**Email Support:** puyue2023@gmail.com
+---
 
-*(When emailing us about a technical issue, please include your device model, iOS version, and a brief description of the problem to help us assist you faster.)*
+## 1. Core Principle: Zero Personal Data Collection
 
-## ❓ Frequently Asked Questions (FAQ)
+- **No Remote Servers**: We do not operate any backend servers, cloud databases, or remote tracking systems to process or store your schedule or employee data.
+- **No Data Transmission**: The App does not collect, track, upload, sell, or transmit any user data, employee names, shift times, notes, or audio inputs to any external server.
+- **No Third-Party Trackers**: The App contains no third-party advertising frameworks, behavioral trackers, or analytics SDKs.
+- **Local Sandbox Storage**: All shift records, employee profiles, and preferences are stored exclusively on your device within the iOS sandboxed storage (`UserDefaults` and local files).
 
-**1. How does the offline AI scheduling work?**  
-AI Shift utilizes advanced on-device Large Language Models (LLMs) that run entirely offline on your phone. This means your voice and text inputs are parsed locally, ensuring ultra-fast results, zero network dependency, and 100% privacy protection for your business data.
+---
 
-**2. I'm getting a "Download Failed" error when trying to download a model. What should I do?**  
-The AI models are quite large (ranging from 0.4GB to 2GB). Please ensure you are connected to a stable Wi-Fi network, keep the app in the foreground, and have enough free storage space on your device. 
+## 2. Device Permissions and Usage
 
-**3. Do I have to use the AI to create a schedule?**  
-Not at all! While the AI is designed to save you time, AI Shift also features a robust manual entry system. You can easily add and manage shifts for your employees manually using standard calendar and time pickers. 
+To deliver core features, AI Shift requests access to specific iOS capabilities. Each permission is used solely on-device:
 
-**4. How can I share the schedule with my employees?**  
-Sharing is seamless! You can share the weekly roster by tapping the "Share as File" button. From there, you can instantly **AirDrop** the schedule to a nearby employee's iPhone, or send it via any chat app (like iMessage, WhatsApp, Telegram, or Line). When they tap the file, it will automatically import into their own AI Shift app.
+1. **Microphone Access (`NSMicrophoneUsageDescription`)**
+   - **Purpose**: Allows you to dictate shift information hands-free using voice input.
+   - **Privacy Guarantee**: Audio captured through the microphone is converted to text locally on your device. Your audio is never recorded for telemetry, never stored externally, and never streamed over the network.
 
-**5. How do I delete my data?**  
-Because AI Shift operates 100% offline, all of your schedule data, employee information, and downloaded models are stored strictly on your device. We do not store your data on any cloud servers. Simply deleting the app from your iPhone or iPad will permanently wipe all associated data.
+2. **Speech Recognition (`NSSpeechRecognitionUsageDescription`)**
+   - **Purpose**: Converts spoken schedule descriptions into text for parsing.
+   - **Privacy Guarantee**: Speech-to-text processing is performed on-device via Apple's native Speech framework. Your voice data remains private to your device.
 
-## 🔒 Privacy & Terms
-* **Privacy Policy:** [Link to your Privacy Policy if you have one, or just remove this bullet]
-* **Terms of Service:** [Link to your Terms of Service if you have one, or just remove this bullet]
+*You can grant or revoke any of these permissions at any time in your iOS `Settings > Privacy & Security`.*
 
-Thank you for choosing AI Shift to streamline your team scheduling!
+---
+
+## 3. Network Access Disclosure (AI Model Weights Download)
+
+AI Shift is designed to run **100% offline** during daily scheduling and AI parsing. 
+
+The **only** network communication initiated by the App occurs when you explicitly choose to download an open-weight local large language model (e.g., Qwen or Gemma GGUF models) from public open-source model repositories (such as `huggingface.co`):
+- This network connection is an outbound HTTPS download request purely to fetch public model weights.
+- **Zero user data, schedule information, device identifiers, or analytics are transmitted** during this download.
+- Once downloaded, the models execute locally on your device via the embedded `llama.cpp` inference engine without requiring any internet connection.
+
+---
+
+## 4. Required System API Disclosures (Privacy Manifest)
+
+In accordance with Apple's Privacy Manifest requirements (`PrivacyInfo.xcprivacy`):
+- **UserDefaults (`CA92.1`)**: Used strictly to persist app settings, selected language, onboarding status, and active local model configurations.
+- **Disk Space (`E174.1`)**: Used solely to check remaining device storage prior to downloading AI models, preventing system storage exhaustion.
+- **Tracking (`NSPrivacyTracking`)**: Set to `false`. We do not track users across apps or websites.
+
+---
+
+## 5. Local Data Sharing & Export (`.aishift`)
+
+- **User-Controlled Sharing**: The App allows you to export schedules as PNG images or `.aishift` files. Such sharing is strictly user-initiated via the native iOS share sheet.
+- **Importing Files**: When opening an `.aishift` file, data is imported directly into your device's local database. No cloud intermediate is involved.
+
+---
+
+## 6. Generative AI Disclaimer & Terms of Use
+
+1. **Assisted Parsing**: Natural language shift parsing is conducted by on-device open-source models. The outputs are generated algorithmically.
+2. **User Verification**: While the models strive for high accuracy, AI outputs may occasionally contain errors or misinterpretations. You are encouraged to review all parsed shifts before confirming and saving them. The developer is not liable for scheduling conflicts or missed shifts resulting from automated parsing.
+
+---
+
+## 7. Data Retention and Deletion
+
+- **Full User Control**: You maintain complete control over your data.
+- **In-App Deletion**: You can delete individual shifts, remove employees, or use the "Clear All Data" button in Settings to purge all records immediately.
+- **App Uninstall**: Deleting AI Shift from your device permanently deletes all local shifts, employee lists, and downloaded AI models from your device.
+
+---
+
+## 8. Children's Privacy
+
+AI Shift does not collect, solicit, or share personal data from any person, including children under the age of 13.
+
+---
+
+## 9. Changes to This Policy
+
+We may update this Privacy Policy from time to time to reflect app updates or regulatory requirements. Any revisions will be published to this repository with an updated revision date.
+
+---
+
+## 10. Contact Us & Support
+
+If you have any questions, feedback, or inquiries regarding this Privacy Policy or the App, please contact the developer:
+
+- **Developer**: Armkas
+- **Support & Inquiries Email**: puyue2023@gmail.com
